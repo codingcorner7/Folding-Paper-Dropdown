@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=Asap:700,400);
+
+body {
+	background: #663399;
+  font-family: 'Asap', sans-serif;
+}
+
+.wrapper {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+a {
+	padding: 1em;
+	text-decoration: none;
+}
+
+.dropdown-button {
+	display: block;
+	width: 250px;
+	color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+	background: #ffb300;
+	text-align: center;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2),
+				inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.dropdown-menu {
+	position: absolute;
+	width: 250px;
+	visibility: hidden;
+	padding: 0;
+	margin: 0;
+
+	&.show {
+		visibility: visible;
+	}
+
+	li {
+		display: block;
+		width: 100%;
+		perspective-origin: 50% 0;
+		perspective: 1000px;
+
+
+		&:last-child {
+
+			a {
+				border-bottom-width: 3px;
+			}
+		}
+
+		a {
+			display: block;
+			width: 100%;
+			border-bottom: 1px dashed #eee;
+			background-color: #fff;
+			font-weight: 100;
+			color: #424242;
+			transform: rotateX(-90deg);
+			transform-origin: top;
+			transition: linear all 0.1s;
+
+			&.visible {
+				transform: rotateX(0deg);
+			}
+		}
+	}
+}
